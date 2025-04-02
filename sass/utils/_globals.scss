@@ -1,0 +1,40 @@
+@use "./_mixins.scss" as mixin;
+
+body {
+  @include mixin.fluid-text(16, 18);
+  
+  font-family: var(--font-family-base);
+  font-weight: 400;
+  color: var(--color-dark);
+  line-height: calc(24 / 16);
+}
+
+a,
+input,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  text-decoration: none;
+  columns: inherit;
+}
+
+h1 {
+  @include mixin.fluid-text(43, 60);
+}
+
+h2 {
+  @include mixin.fluid-text(36, 40);
+}
+
+h3 {
+  @include mixin.fluid-text(26, 30);
+}
+
+h4 {
+  @include mixin.fluid-text(18, 20);
+}

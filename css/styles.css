@@ -1,0 +1,328 @@
+@charset "UTF-8";
+/**
+  Нормализация блочной модели
+ */
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/**
+   Убираем внутренние отступы слева тегам списков,
+   у которых есть атрибут class
+  */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+   Убираем внешние отступы body и двум другим тегам,
+   у которых есть атрибут class
+  */
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+   Убираем внешние отступы вертикали нужным тегам,
+   у которых есть атрибут class
+  */
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
+  margin-block: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+   Убираем стандартный маркер маркированному списку,
+   у которого есть атрибут class
+  */
+:where(ul[class]) {
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+/**
+   Обнуляем вертикальные внешние отступы параграфа,
+   объявляем локальную переменную для внешнего отступа вниз,
+   чтобы избежать взаимодействие с более сложным селектором
+  */
+p {
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
+}
+
+/**
+   Внешний отступ вниз для параграфа без атрибута class,
+   который расположен не последним среди своих соседних элементов
+  */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
+   Упрощаем работу с изображениями и видео
+  */
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+   Наследуем свойства шрифт для полей ввода
+  */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
+  height: 100%;
+  /**
+     Убираем скачок интерфейса по горизонтали
+     при появлении / исчезновении скроллбара
+    */
+  scrollbar-gutter: stable;
+}
+
+/**
+   Плавный скролл
+  */
+html,
+:has(:target) {
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
+  min-height: 100%;
+  /**
+     Унифицированный интерлиньяж
+    */
+  line-height: 1.5;
+}
+
+/**
+   Нормализация высоты элемента ссылки при его инспектировании в DevTools
+  */
+a:where([class]) {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+/**
+   Курсор-рука при наведении на элемент
+  */
+button,
+label {
+  cursor: pointer;
+}
+
+/**
+   Приводим к единому цвету svg-элементы
+   (за исключением тех, у которых уже указан
+   атрибут fill со значением 'none' или начинается с 'url')
+  */
+:where([fill]:not([fill=none], [fill^=url])) {
+  fill: currentColor;
+}
+
+/**
+   Приводим к единому цвету svg-элементы
+   (за исключением тех, у которых уже указан
+   атрибут stroke со значением 'none')
+  */
+:where([stroke]:not([stroke=none], [stroke^=url])) {
+  stroke: currentColor;
+}
+
+/**
+   Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+  */
+svg * {
+  -webkit-transition-property: fill, stroke;
+  transition-property: fill, stroke;
+}
+
+/**
+   Приведение рамок таблиц в классический 'collapse' вид
+  */
+:where(table) {
+  border-collapse: collapse;
+  border-color: currentColor;
+}
+
+/**
+   Удаляем все анимации и переходы для людей,
+   которые предпочитают их не использовать
+  */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+::root {
+  --color-dark: #191A23;
+  --color-dark-alt: #292A32;
+  --color-light: #ffffff;
+  --color-gray: #F3F3F3;
+  --color-gray-alt: #898989;
+  --color-accent: #B9FF66;
+  --border: 1px solid var(--color-dark);
+  --shadow: 0 5px 0 0 var(--color-dark);
+  --border-radius-large: 45px;
+  --border-radius-medium: 14px;
+  --border-radius-small: 7px;
+  --btn-height: 68px;
+  --btn-padding: 20px 35px;
+  --input-height: 59px;
+  --input-padding: 18px 30px;
+  --mobile-container-width: 430px;
+  --mobile-container-padding-x: 20px;
+  --container-width: 1240px;
+  --container-padding-x: 100px;
+  --section-padding-y: 70px;
+  --font-family-base: "Space Grotesk", sans-serif;
+  --transition-duration: 350ms ;
+}
+
+@font-face {
+  font-family: "Space Grotesk", sans-serif;
+  src: url("../../fonts/SpaceGrotesk-Medium.woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Grotesk", sans-serif;
+  src: url("../../fonts/SpaceGrotesk-Regular.woff2.woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  font-size: clamp(16px, 1.25vw, 18px);
+  font-family: var(--font-family-base);
+  font-weight: 400;
+  color: var(--color-dark);
+  line-height: 1.5;
+}
+
+a,
+input,
+button,
+input,
+textarea,
+svg * {
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+
+a {
+  text-decoration: none;
+  -webkit-columns: inherit;
+     -moz-columns: inherit;
+          columns: inherit;
+}
+
+h1 {
+  font-size: clamp(43px, 4.1666666667vw, 60px);
+}
+
+h2 {
+  font-size: clamp(36px, 2.7777777778vw, 40px);
+}
+
+h3 {
+  font-size: clamp(26px, 2.0833333333vw, 30px);
+}
+
+h4 {
+  font-size: clamp(18px, 1.3888888889vw, 20px);
+}
+
+.container {
+  width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.section {
+  padding-block: var(--section-padding-y);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.btn {
+  height: var(--btn-height);
+  padding: var(--btn-padding);
+  border-radius: var(----border-radius-medium);
+}
+
+.btn--dark {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+.btn--dark:hover {
+  background-color: var(--color-accent);
+  color: var(--color-dark);
+}
+
+.btn--accent {
+  background-color: var(--color-accent);
+  color: var(--color-dark);
+}
+.btn--accent:hover {
+  background-color: var(--color-gray);
+  color: var(--color-dark-alt);
+}/*# sourceMappingURL=styles.css.map */

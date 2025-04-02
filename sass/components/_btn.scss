@@ -1,0 +1,22 @@
+.btn {
+  height: var(--btn-height);
+  padding: var(--btn-padding);
+  border-radius: var(----border-radius-medium);
+}
+
+.btn--dark {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  &:hover {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+  }
+}
+.btn--accent {
+  background-color: var(--color-accent);
+  color: var(--color-dark);
+  &:hover {
+    background-color: var(--color-gray);
+    color: var(--color-dark-alt);
+  }
+}
