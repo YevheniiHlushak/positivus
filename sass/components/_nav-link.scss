@@ -1,0 +1,30 @@
+@use "../utils/_media.scss" as media;
+
+
+.nav-link {
+  position: relative;
+  padding-block: 20px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    translate: -50%;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition-duration: var(--transition-duration);
+  }
+
+  @include media.hover {
+    color: var(--color-accent);
+
+    &::after {
+      width: 100%;
+      background-color: var(--color-accent);
+    }
+  }
+}
+
+

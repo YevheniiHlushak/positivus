@@ -1,0 +1,21 @@
+@use "../utils/_mixins.scss" as mixin;
+
+
+.mobile-menu__close {
+  &::before,
+  &::after {
+    @include mixin.abs-center;
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 2px;
+    border-radius: 5px;
+    background-color: var(--color-dark);
+  }
+  &::before {
+    rotate: 45deg;
+  }
+  &::after {
+    rotate: -45deg;
+  }
+}

@@ -1,4 +1,4 @@
-::root {
+:root {
 
     --color-dark: #191A23;
     --color-dark-alt: #292A32;
@@ -22,10 +22,10 @@
     --mobile-container-width: 430px; 
     --mobile-container-padding-x: 20px; 
     --container-width: 1240px; 
-    --container-padding-x: 100px; 
+    --container-padding-x: clamp(20px, 3vw, 100px); 
     
     --section-padding-y: 70px;
 
     --font-family-base: "Space Grotesk", sans-serif;
-    --transition-duration: 350ms
+    --transition-duration: 250ms
 }
