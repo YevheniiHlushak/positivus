@@ -1,0 +1,16 @@
+@use "../utils/_mixins.scss" as mixin;
+@use "../utils/_media.scss" as media;
+
+.burger-btn {
+  position: relative;
+
+  &::after {
+    @include mixin.abs-center;
+    content: "";
+    width: 50%;
+    height: 2px;
+    background-color: var(--color-dark);
+    border-radius: 5px;
+    box-shadow: 0 -8px, 0 8px;
+  }
+}

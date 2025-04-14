@@ -1,0 +1,12 @@
+@use "../utils/_mixins.scss" as mixin;
+@use "../utils/_media.scss" as media;
+
+.mobile-menu__btn {
+  @include mixin.reset-btn;
+  @include mixin.square(48px);
+  @include media.hover {
+    background-color: var(--color-accent);
+  }
+  
+  border-radius: var(--border-radius-small);
+}

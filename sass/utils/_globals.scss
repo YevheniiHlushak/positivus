@@ -1,4 +1,4 @@
-@use "./_mixins.scss" as mixin;
+@use "./mixins" as mixin;
 
 body {
   @include mixin.fluid-text(16, 18);
@@ -20,7 +20,7 @@ svg * {
 
 a {
   text-decoration: none;
-  columns: inherit;
+  color: inherit;
 }
 
 h1 {

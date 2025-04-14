@@ -41,12 +41,14 @@ $mobile-above: 768px;
   }
 }
 
+
 @mixin hover {
   @media (hover: hover) {
     &:hover {
       @content;
     }
   }
+  
   @media (hover: none) {
     &:active {
       @content;

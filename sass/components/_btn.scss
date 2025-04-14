@@ -1,22 +1,43 @@
+@use "../utils/media" as media;
+@use "../utils/mixins" as mixin;
+
 .btn {
+  // @include mixin.fluid-text(16,20);
+  // font-size: 20px;
   height: var(--btn-height);
   padding: var(--btn-padding);
-  border-radius: var(----border-radius-medium);
+  border-radius: var(--border-radius-medium);
+  line-height: calc(28 / 20);
 }
 
 .btn--dark {
   background-color: var(--color-dark);
   color: var(--color-light);
-  &:hover {
+
+  @include media.hover {
     background-color: var(--color-accent);
     color: var(--color-dark);
   }
 }
+
 .btn--accent {
   background-color: var(--color-accent);
   color: var(--color-dark);
-  &:hover {
+
+  @include media.hover {
     background-color: var(--color-gray);
     color: var(--color-dark-alt);
+  }
+}
+
+.btn--light {
+  max-width: 231px;
+  padding: clamp(10px, 1.39vw, 20px) clamp(15px, 2.43vw, 35px);
+  border: var(--border);
+  background-color: transparent;
+  color: var(--color-dark);
+
+  @include media.hover {
+    background-color: var(--color-accent);
   }
 }

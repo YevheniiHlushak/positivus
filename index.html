@@ -1,12 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styles.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0 user-scalable=no maximum.scale=1.0"
+    />
+    <link rel="stylesheet" href="./css/styles.min.css" />
     <title>Positivus</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__inner container">
+        <a href="/" class="header__logo logo">
+          <img
+            src="./images/header-logo.svg"
+            alt="positivus logo"
+            loading="lazy"
+            width="220"
+            height="36"
+          />
+        </a>
+        <nav class="header__menu hidden-mobile">
+          <ul class="menu__list">
+            <li class="menu__item">
+              <a class="menu__link nav-link" href="#">About us</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link nav-link" href="#">Services</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link nav-link" href="#">Use Cases</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link nav-link" href="#">Pricing</a>
+            </li>
+            <li class="menu__item"><a class="menu__link nav-link" href="#">Blog</a></li>
+          </ul>
+        </nav>
+        <button class="header__btn btn btn--light hidden-mobile" type="button">
+          Request a quote
+        </button>
+
+        <!-- burger-button -->
+         
+        <button
+          class="header__burger-menu burger-btn mobile-menu__btn visible-mobile"
+          id="openMenuBtn"
+          type="button"
+        >
+          <span class="visually-hidden">open navigation menu</span>
+        </button>
+      </div>
+    </header>
+        <!-- Mobile menu -->
+    <div class="mobile-overlay visible-mobile is-hidden" id="mobileOverlay">
+      <div class="mobile-menu__wrapper">
+        <button
+          class="mobile-menu__close mobile-menu__btn cross-btn visible-mobile"
+          id="closeMenuBtn"
+
+          type="button"
+        >
+          <span class="visually-hidden">open navigation menu</span>
+        </button>
+        <ul class="mobile-menu__list">
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link nav-link" href="#">About us</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link nav-link" href="#">Services</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link nav-link" href="#">Use Cases</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link nav-link" href="#">Pricing</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link nav-link" href="#">Blog</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+<script src="./js/mobile-menu.js"></script>
+  </body>
 </html>

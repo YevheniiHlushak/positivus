@@ -1,3 +1,5 @@
+@use "../utils/media" as media;
+
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -11,14 +13,14 @@
     overflow: hidden;
   }
 
-  // .hidden-mobile {
-  //   @include mobile-below{
-  //     display: none !important;
-  //   }
-  // }
+   .hidden-mobile {
+     @include media.mobile-below{
+       display: none !important;
+     }
+   }
 
-  // .visible-mobile {
-  //   @include mobile-above{
-  //     display: none !important;
-  //   }
-  // }
+   .visible-mobile {
+     @include media.mobile-above{
+       display: none !important;
+     }
+   }
