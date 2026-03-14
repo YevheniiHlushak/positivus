@@ -1,10 +1,10 @@
-@use "../utils/_mixins.scss" as mixin;
-@use "../utils/_media.scss" as media;
+@use '../utils/_mixins.scss' as mixin;
+@use '../utils/_media.scss' as media;
 
 .header {
   padding-top: 60px;
 
-  @include media.desktop-below{
+  @include media.desktop-below {
     padding-top: 30px;
   }
 
@@ -14,26 +14,21 @@
     align-items: center;
     column-gap: 40px;
 
-    @include media.desktop-below{
-        column-gap: 30px;
-      }
-
+    @include media.desktop-below {
+      column-gap: 30px;
+    }
   }
 
   &__logo {
+    @include media.desktop-below {
+      width: 120px;
+    }
 
-    @include media.desktop-below{
-        width: 120px;
-        
+    @include media.tablet-below {
+      width: 100px;
     }
-    
-    @include media.tablet-below{
-        width: 100px;
-        
-    }
-    @include media.mobile-below{
-        width: 144px;
-        
+    @include media.mobile-below {
+      width: 144px;
     }
   }
 
@@ -47,10 +42,9 @@
   align-items: center;
   column-gap: 40px;
 
-  @include media.desktop-below{
+  @include media.desktop-below {
     column-gap: 20px;
   }
-
 }
 
 .menu__link {
@@ -65,40 +59,3 @@
     font-size: 16px;
   }
 }
-
-// .menu__link {
-//   position: relative;
-//   padding-block: 20px;
-//   font-size: 20px;
-//   line-height: calc(28 / 20);
-
-//   @include media.desktop-below{
-//     font-size: 18px;
-//   }
-
-//   @include media.tablet-below{
-//     font-size: 16px;
-//   }
-  
-
-//   &::after {
-//     content: "";
-//     position: absolute;
-//     top: 75%;
-//     left: 50%;
-//     translate: -50%;
-//     width: 0;
-//     height: 2px;
-//     background-color: currentColor;
-//     transition-duration: var(--transition-duration);
-//   }
-
-//   @include media.hover {
-//     color: var(--color-accent);
-
-//     &::after {
-//       width: 100%;
-//       background-color: var(--color-accent);
-//     }
-//   }
-// }

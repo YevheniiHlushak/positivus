@@ -1,3 +1,19 @@
-.section{
-    padding-block: var(--section-padding-y);
+@use '../utils/media' as media;
+
+.section {
+  @include media.desktop-above {
+    padding-block: var(--section-desktop-padding-y);
+  }
+
+  @include media.tablet-below {
+    padding-block: var(--section-tablet-padding-y);
+  }
+
+  @include media.mobile-below {
+    padding-block: var(--section-mobile-padding-y);
+  }
+}
+
+.section--hidden-x {
+  overflow-x: hidden;
 }

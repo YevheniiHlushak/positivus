@@ -1,11 +1,10 @@
-@use "../utils/_mixins.scss" as mixin;
-
+@use '../utils/_mixins.scss' as mixin;
 
 .mobile-menu__close {
   &::before,
   &::after {
     @include mixin.abs-center;
-    content: "";
+    content: '';
     position: absolute;
     width: 70%;
     height: 2px;
