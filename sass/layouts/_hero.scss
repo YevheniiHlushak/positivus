@@ -1,0 +1,115 @@
+@use '../utils/_mixins.scss' as mixin;
+@use '../utils/_media.scss' as media;
+
+.hero__body {
+  @include mixin.flex-center;
+  column-gap: 109px;
+  margin-bottom: 70px;
+
+  @include media.mobile-below {
+    flex-direction: column;
+    margin-bottom: 60px;
+  }
+}
+
+.hero__content {
+  max-width: 531px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  row-gap: 35px;
+
+  @include media.mobile-below {
+    display: contents;
+  }
+}
+
+.hero__title {
+  @include media.mobile-below {
+    margin-bottom: 10px;
+    order: -2;
+  }
+}
+
+.hero__description {
+  @include mixin.fluid-text(16, 20);
+  color: var(--color-dark);
+  line-height: 1.4;
+
+  @include media.mobile-below {
+    margin-bottom: 40px;
+  }
+}
+
+.hero__btn {
+  @include media.mobile-below {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 390px;
+  }
+}
+
+.hero__image {
+  width: clamp(500px, 50vw, 600px);
+  align-self: flex-start;
+
+  @include media.tablet-below {
+    width: clamp(400px, 50vw, 500px);
+  }
+
+  @include media.mobile-below {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+    align-self: center;
+    order: -1;
+  }
+}
+
+.partners__list {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 37px;
+
+  @include media.desktop-below {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+  }
+
+  @include media.mobile-s-below {
+    --heroPartnersWidthOffsetX: 60px;
+
+    column-gap: 0;
+    width: calc(100vw + var(--heroPartnersWidthOffsetX) * 2);
+
+    margin-left: calc(
+      (var(--mobile-container-padding-x) + var(--heroPartnersWidthOffsetX)) * -1
+    );
+  }
+}
+
+.partners__item {
+  @include media.tablet-below {
+    display: flex;
+    justify-content: center;
+  }
+
+  @include media.mobile-s-below {
+    justify-content: start;
+
+    &:nth-child(-n + 3) {
+      justify-content: end;
+    }
+  }
+}
+
+.partners__link {
+  filter: grayscale(1);
+  transition-duration: var(--transition-duration);
+
+  @include media.hover {
+    filter: grayscale(0);
+    transform: scale(1.1);
+  }
+}

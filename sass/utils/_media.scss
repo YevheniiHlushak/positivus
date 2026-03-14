@@ -7,6 +7,9 @@ $tablet-above: 1024px;
 $mobile-below: 767px;
 $mobile-above: 768px;
 
+$mobile-s-below: 480px;
+$mobile-s-above: 481px;
+
 @mixin desktop-below {
   @media screen and (max-width: $desktop-below) {
     @content;
@@ -41,6 +44,17 @@ $mobile-above: 768px;
   }
 }
 
+@mixin mobile-s-below {
+  @media screen and (max-width: $mobile-s-below) {
+    @content;
+  }
+}
+
+@mixin mobile-s-above {
+  @media screen and (min-width: $mobile-s-above) {
+    @content;
+  }
+}
 
 @mixin hover {
   @media (hover: hover) {
@@ -48,7 +62,7 @@ $mobile-above: 768px;
       @content;
     }
   }
-  
+
   @media (hover: none) {
     &:active {
       @content;

@@ -1,9 +1,8 @@
-@use "../utils/media" as media;
-@use "../utils/mixins" as mixin;
+@use '../utils/media' as media;
+@use '../utils/mixins' as mixin;
 
 .btn {
   // @include mixin.fluid-text(16,20);
-  // font-size: 20px;
   height: var(--btn-height);
   padding: var(--btn-padding);
   border-radius: var(--border-radius-medium);

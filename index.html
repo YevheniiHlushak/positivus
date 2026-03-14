@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/styles.min.css" />
     <title>Positivus</title>
   </head>
+
   <body>
     <header class="header">
       <div class="header__inner container">
@@ -21,6 +22,7 @@
             height="36"
           />
         </a>
+
         <nav class="header__menu hidden-mobile">
           <ul class="menu__list">
             <li class="menu__item">
@@ -35,7 +37,9 @@
             <li class="menu__item">
               <a class="menu__link nav-link" href="#">Pricing</a>
             </li>
-            <li class="menu__item"><a class="menu__link nav-link" href="#">Blog</a></li>
+            <li class="menu__item">
+              <a class="menu__link nav-link" href="#">Blog</a>
+            </li>
           </ul>
         </nav>
         <button class="header__btn btn btn--light hidden-mobile" type="button">
@@ -43,7 +47,7 @@
         </button>
 
         <!-- burger-button -->
-         
+
         <button
           class="header__burger-menu burger-btn mobile-menu__btn visible-mobile"
           id="openMenuBtn"
@@ -53,13 +57,118 @@
         </button>
       </div>
     </header>
-        <!-- Mobile menu -->
+
+    <main class="content">
+      <section class="section hero section--hidden-x">
+        <div class="container">
+          <div class="hero__body">
+            <div class="hero__content">
+              <h1 class="hero__title">
+                Navigating the digital landscape for success
+              </h1>
+              <p class="hero__description">
+                Our digital marketing agency helps businesses grow and succeed
+                online through a range of services including SEO, PPC, social
+                media marketing, and content creation.
+              </p>
+              <button class=" hero__btn btn btn--dark">Book a consultation</button>
+            </div>
+            <img
+              class="hero__image"
+              src="../images/hero-image.svg"
+              alt="hero image"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- partners -->
+          <div class="hero__partners">
+            <h2 class="visually-hidden">Our partners</h2>
+            <ul class="partners__list">
+              <li class="partners__item">
+                <a class="partners__link" href="#">
+                  <img
+                    class="partners__logo"
+                    src="../images/partners/partner-1.svg"
+                    alt="amazon logo"
+                    loading="lazy"
+                    width="130"
+                    height="48"
+                  />
+                </a>
+              </li>
+              <li class="partners__item">
+                <a class="partners__link" href="#">
+                  <img
+                    class="partners__logo"
+                    src="../images/partners/partner-2.svg"
+                    alt="dirrible logo"
+                    loading="lazy"
+                    width="130"
+                    height="48"
+                  />
+                </a>
+              </li>
+              <li class="partners__item">
+                <a class="partners__link" href="#">
+                  <img
+                    class="partners__logo"
+                    src="../images/partners/partner-3.svg"
+                    alt="hubspot logo"
+                    loading="lazy"
+                    width="130"
+                    height="48"
+                  />
+                </a>
+              </li>
+              <li class="partners__item">
+                <a class="partners__link" href="#">
+                  <img
+                    class="partners__logo"
+                    src="../images/partners/partner-4.svg"
+                    alt="notion logo"
+                    loading="lazy"
+                    width="130"
+                    height="48"
+                  />
+                </a>
+              </li>
+              <li class="partners__item">
+                <a class="partners__link" href="#">
+                  <img
+                    class="partners__logo"
+                    src="../images/partners/partner-5.svg"
+                    alt="netflix logo"
+                    loading="lazy"
+                    width="130"
+                    height="48"
+                  />
+                </a>
+              </li>
+              <li class="partners__item">
+                <a class="partners__link" href="#">
+                  <img
+                    class="partners__logo"
+                    src="../images/partners/partner-6.svg"
+                    alt="zoom logo"
+                    loading="lazy"
+                    width="130"
+                    height="48"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Mobile menu -->
     <div class="mobile-overlay visible-mobile is-hidden" id="mobileOverlay">
       <div class="mobile-menu__wrapper">
         <button
           class="mobile-menu__close mobile-menu__btn cross-btn visible-mobile"
           id="closeMenuBtn"
-
           type="button"
         >
           <span class="visually-hidden">open navigation menu</span>
@@ -83,6 +192,6 @@
         </ul>
       </div>
     </div>
-<script src="./js/mobile-menu.js"></script>
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>
