@@ -5,6 +5,7 @@
 ::before,
 ::after {
   box-sizing: border-box;
+  outline: 1px solid red;
 }
 
 /**
@@ -32,8 +33,13 @@ body,
   margin-block: 0;
 }
 
-h1, h2, h3, h4, h5, h6{
-    font-weight: 500;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
 }
 
 :where(dd[class]) {
@@ -150,7 +156,7 @@ label {
    (за исключением тех, у которых уже указан
    атрибут fill со значением 'none' или начинается с 'url')
   */
-:where([fill]:not([fill="none"], [fill^="url"])) {
+:where([fill]:not([fill='none'], [fill^='url'])) {
   fill: currentColor;
 }
 
@@ -159,7 +165,7 @@ label {
    (за исключением тех, у которых уже указан
    атрибут stroke со значением 'none')
   */
-:where([stroke]:not([stroke="none"], [stroke^="url"])) {
+:where([stroke]:not([stroke='none'], [stroke^='url'])) {
   stroke: currentColor;
 }
 

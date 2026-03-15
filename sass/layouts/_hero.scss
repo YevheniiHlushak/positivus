@@ -50,11 +50,11 @@
 }
 
 .hero__image {
-  width: clamp(500px, 50vw, 600px);
+  width: 100%;
   align-self: flex-start;
 
   @include media.tablet-below {
-    width: clamp(400px, 50vw, 500px);
+    width: 40%;
   }
 
   @include media.mobile-below {
@@ -81,11 +81,11 @@
     --heroPartnersWidthOffsetX: 60px;
 
     column-gap: 0;
-    width: calc(100vw + var(--heroPartnersWidthOffsetX) * 2);
+    // width: calc(100% + var(--heroPartnersWidthOffsetX) * 2);
 
-    margin-left: calc(
-      (var(--mobile-container-padding-x) + var(--heroPartnersWidthOffsetX)) * -1
-    );
+    // margin-left: calc(
+    //   (var(--mobile-container-padding-x) + var(--heroPartnersWidthOffsetX)) * -1
+    // );
   }
 }
 
