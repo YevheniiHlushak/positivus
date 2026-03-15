@@ -1,3 +1,4 @@
+@use '../utils/media.scss' as media;
 .grid {
   --gridColumns: 1;
 
@@ -5,9 +6,19 @@
   grid-template-columns: repeat(var(--gridColumns), 1fr);
   gap: 40px;
 
+  @include media.mobile-below {
+    gap: 30px;
+  }
+
   @for $i from 2 through 12 {
     &--#{$i} {
       --gridColumns: #{$i};
+    }
+  }
+
+  &--2 {
+    @include media.tablet-below {
+      --gridColumns: 1;
     }
   }
 }

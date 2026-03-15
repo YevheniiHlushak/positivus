@@ -1,26 +1,18 @@
-@use "../utils/media" as media;
+@use '../utils/media' as media;
+@use '../utils/mixins' as mixins;
 
 .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+  @include mixins.visually-hidden;
+}
+
+.hidden-mobile {
+  @include media.mobile-below {
+    display: none !important;
   }
+}
 
-   .hidden-mobile {
-     @include media.mobile-below{
-       display: none !important;
-     }
-   }
-
-   .visible-mobile {
-     @include media.mobile-above{
-       display: none !important;
-     }
-   }
+.visible-mobile {
+  @include media.mobile-above {
+    display: none !important;
+  }
+}
