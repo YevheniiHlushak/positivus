@@ -1,8 +1,8 @@
-@use "./mixins" as mixin;
+@use './mixins' as mixin;
 
 body {
   @include mixin.fluid-text(16, 18);
-  
+
   font-family: var(--font-family-base);
   font-weight: 400;
   color: var(--color-dark);

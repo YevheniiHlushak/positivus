@@ -1,0 +1,82 @@
+@use '../utils/_mixins.scss' as mixin;
+@use '../utils/_media.scss' as media;
+
+.services {
+  &__list {
+    margin-bottom: 80px;
+  }
+}
+
+.service-card {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 30px;
+  min-height: 310px;
+  padding: 50px;
+
+  border: var(--border);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow);
+
+  &--gray {
+    background-color: var(--color-gray);
+  }
+
+  &--accent {
+    background-color: var(--color-accent);
+  }
+
+  &--dark {
+    background-color: var(--color-dark);
+
+    .service-card__link {
+      color: var(--color-light);
+
+      svg {
+        color: var(--color-dark);
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 20px;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  &__link {
+    --serviceCardLinkIconColor: var(--color-accent);
+
+    display: inline-flex;
+    align-items: center;
+    column-gap: 15px;
+    font-size: 20px;
+
+    @include media.hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__icon {
+    align-self: center;
+  }
+}
+
+.link__icon-wrapper {
+  @include mixin.flex-center;
+  @include mixin.square(41px);
+
+  background-color: currentColor;
+  border-radius: 50%;
+
+  svg {
+    color: var(--serviceCardLinkIconColor);
+  }
+}

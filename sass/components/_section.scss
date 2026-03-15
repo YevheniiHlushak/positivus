@@ -12,6 +12,20 @@
   @include media.mobile-below {
     padding-block: var(--section-mobile-padding-y);
   }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    column-gap: 40px;
+    margin-bottom: 80px;
+  }
+
+  &__title {
+  }
+
+  &__description {
+    max-width: 580px;
+  }
 }
 
 .section--hidden-x {
