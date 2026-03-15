@@ -1,0 +1,44 @@
+@use '../utils/_mixins.scss' as mixin;
+@use '../utils/_media.scss' as media;
+
+.studies {
+  padding: 70px 60px;
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  border-radius: var(--border-radius-large);
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    --studiesItemPaddingX: 64px;
+
+    &:not(:first-child) {
+      padding-left: var(--studiesItemPaddingX);
+    }
+
+    &:not(:last-child) {
+      padding-right: var(--studiesItemPaddingX);
+      border-right: 1px solid var(--color-light);
+    }
+  }
+
+  &__description {
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    color: var(--color-accent);
+    font-size: 20px;
+    line-height: 1.4;
+
+    @include media.hover {
+      opacity: 0.7;
+    }
+  }
+}
