@@ -2,6 +2,7 @@
   "semi": true,
   "singleQuote": true,
   "tabWidth": 2,
-  "printWidth": 80,
+  "printWidth": 120,
+  "htmlWhitespaceSensitivity": "ignore",
   "trailingComma": "es5"
 }

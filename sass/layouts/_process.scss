@@ -1,0 +1,87 @@
+@use '../utils/_mixins.scss' as mixin;
+@use '../utils/_media.scss' as media;
+
+.process {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    counter-reset: custom-counter;
+    list-style: none;
+  }
+
+  &__item {
+    counter-increment: custom-counter;
+  }
+
+  &__accordion {
+    --indicatorVerticalRotate: 90deg;
+
+    padding: 40px 60px;
+    background-color: var(--color-gray);
+    border: var(--border);
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow);
+    transition-duration: var(--transition-duration);
+
+    @include media.hover {
+      background-color: var(--color-accent);
+    }
+
+    &[open] {
+      --indicatorVerticalRotate: 0deg;
+      background-color: var(--color-accent);
+    }
+  }
+
+  &__accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 50px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__accordion-title {
+    display: flex;
+    align-items: center;
+    column-gap: 25px;
+
+    &::before {
+      content: '0' counter(custom-counter);
+      font-size: 2em;
+    }
+  }
+
+  &__accordion-indicator {
+    @include mixin.flex-center;
+    @include mixin.square(58px);
+
+    position: relative;
+    background-color: var(--color-gray);
+    border: var(--border);
+    border-radius: 50%;
+
+    &::before,
+    &::after {
+      @include mixin.abs-center;
+
+      content: '';
+      width: 45%;
+      height: 10%;
+
+      background-color: var(--color-dark);
+    }
+    &::after {
+      transition-duration: var(--transition-duration);
+      rotate: var(--indicatorVerticalRotate);
+    }
+  }
+
+  &__accordion-body {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: var(--border);
+  }
+}

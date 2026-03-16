@@ -5,7 +5,7 @@
     padding-block: var(--section-desktop-padding-y);
   }
 
-  @include media.tablet-below {
+  @include media.desktop-below {
     padding-block: var(--section-tablet-padding-y);
   }
 
@@ -32,7 +32,6 @@
   }
 
   &__title {
-    width: 245px;
   }
 
   &__description {
