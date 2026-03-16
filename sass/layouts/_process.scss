@@ -1,0 +1,120 @@
+@use '../utils/_mixins.scss' as mixin;
+@use '../utils/_media.scss' as media;
+
+.process {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    counter-reset: custom-counter;
+    list-style: none;
+
+    @include media.mobile-below {
+      row-gap: 20px;
+    }
+  }
+
+  &__item {
+    --itemsCounter: counter(custom-counter);
+
+    counter-increment: custom-counter;
+
+    &:nth-child(-n + 9) {
+      --itemsCounter: '0' counter(custom-counter);
+    }
+  }
+
+  &__accordion {
+    --indicatorVerticalRotate: 90deg;
+
+    padding: 40px 60px;
+    background-color: var(--color-gray);
+    border: var(--border);
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow);
+    transition-duration: var(--transition-duration);
+
+    @include media.mobile-below {
+      padding: 30px;
+    }
+
+    @include media.hover {
+      background-color: var(--color-accent);
+    }
+
+    &[open] {
+      --indicatorVerticalRotate: 0deg;
+      background-color: var(--color-accent);
+    }
+  }
+
+  &__accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 50px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__accordion-title {
+    display: flex;
+    align-items: center;
+    column-gap: 25px;
+
+    @include media.mobile-below {
+      column-gap: 33px;
+      font-size: 18px;
+    }
+
+    &::before {
+      content: var(--itemsCounter);
+      font-size: 2em;
+
+      @include media.mobile-below {
+        font-size: 30px;
+      }
+    }
+  }
+
+  &__accordion-indicator {
+    @include mixin.flex-center;
+    @include mixin.square(58px);
+
+    flex-shrink: 0;
+    position: relative;
+    background-color: var(--color-gray);
+    border: var(--border);
+    border-radius: 50%;
+
+    @include media.mobile-below {
+      width: 30px;
+    }
+
+    &::before,
+    &::after {
+      @include mixin.abs-center;
+
+      content: '';
+      width: 45%;
+      height: 10%;
+
+      background-color: var(--color-dark);
+    }
+    &::after {
+      transition-duration: var(--transition-duration);
+      rotate: var(--indicatorVerticalRotate);
+    }
+  }
+
+  &__accordion-body {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: var(--border);
+
+    @include media.mobile-below {
+      margin-top: 20px;
+      padding-top: 20px;
+    }
+  }
+}
