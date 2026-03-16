@@ -5,13 +5,23 @@
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    row-gap: 30px;
     counter-reset: custom-counter;
     list-style: none;
+
+    @include media.mobile-below {
+      row-gap: 20px;
+    }
   }
 
   &__item {
+    --itemsCounter: counter(custom-counter);
+
     counter-increment: custom-counter;
+
+    &:nth-child(-n + 9) {
+      --itemsCounter: '0' counter(custom-counter);
+    }
   }
 
   &__accordion {
@@ -23,6 +33,10 @@
     border-radius: var(--border-radius-large);
     box-shadow: var(--shadow);
     transition-duration: var(--transition-duration);
+
+    @include media.mobile-below {
+      padding: 30px;
+    }
 
     @include media.hover {
       background-color: var(--color-accent);
@@ -48,9 +62,18 @@
     align-items: center;
     column-gap: 25px;
 
+    @include media.mobile-below {
+      column-gap: 33px;
+      font-size: 18px;
+    }
+
     &::before {
-      content: '0' counter(custom-counter);
+      content: var(--itemsCounter);
       font-size: 2em;
+
+      @include media.mobile-below {
+        font-size: 30px;
+      }
     }
   }
 
@@ -58,10 +81,15 @@
     @include mixin.flex-center;
     @include mixin.square(58px);
 
+    flex-shrink: 0;
     position: relative;
     background-color: var(--color-gray);
     border: var(--border);
     border-radius: 50%;
+
+    @include media.mobile-below {
+      width: 30px;
+    }
 
     &::before,
     &::after {
@@ -83,5 +111,10 @@
     margin-top: 30px;
     padding-top: 30px;
     border-top: var(--border);
+
+    @include media.mobile-below {
+      margin-top: 20px;
+      padding-top: 20px;
+    }
   }
 }
