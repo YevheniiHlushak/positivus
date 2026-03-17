@@ -6,6 +6,14 @@
   flex-direction: column;
   row-gap: 40px;
 
+  &__item {
+    @include media.mobile-below {
+      &:nth-last-child(-n + 2) {
+        display: none;
+      }
+    }
+  }
+
   &__btn {
     align-self: end;
     min-width: 269px;

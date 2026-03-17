@@ -1,0 +1,20 @@
+@use '../utils/_mixins.scss' as mixin;
+@use '../utils/_media.scss' as media;
+
+.pagination {
+  &__list {
+    display: flex;
+  }
+
+  &__btn {
+    @include mixin.reset-btn;
+    @include mixin.flex-center;
+    @include mixin.square(24px);
+
+    color: var(--color-light);
+
+    &.is-current {
+      color: var(--color-accent);
+    }
+  }
+}
