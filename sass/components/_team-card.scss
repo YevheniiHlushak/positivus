@@ -1,0 +1,63 @@
+@use '../utils/_media.scss' as media;
+@use '../utils/_mixins.scss' as mixin;
+
+.team-card {
+  height: 100%;
+  padding: 40px 35px;
+  border: var(--border);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow);
+
+  @include media.mobile-below {
+    padding-inline: 50px;
+  }
+  &__header {
+    position: relative;
+    display: flex;
+  }
+
+  &__img {
+    margin-right: 20px;
+  }
+
+  &__info {
+    align-self: end;
+  }
+
+  &__name {
+    @include media.mobile-below {
+      margin-bottom: 3px;
+    }
+  }
+
+  &__link {
+    @include mixin.flex-center;
+    @include mixin.square(34px);
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    flex-shrink: 0;
+    color: var(--color-accent);
+    background-color: var(--color-dark);
+    border-radius: 50%;
+    transition-duration: var(--transition-duration);
+
+    @include media.hover {
+      scale: 1.2;
+    }
+  }
+
+  &__body {
+    --teamCardBodyMarginTop: 28px;
+
+    margin-top: var(--teamCardBodyMarginTop);
+    padding-top: var(--teamCardBodyMarginTop);
+    border-top: var(--border);
+
+    @include media.mobile-below {
+      --teamCardBodyMarginTop: 20px;
+    }
+  }
+}
