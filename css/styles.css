@@ -1445,6 +1445,11 @@ h4,
           flex-direction: column;
   row-gap: 40px;
 }
+@media screen and (max-width: 767px) {
+  .team__item:nth-last-child(-n+2) {
+    display: none;
+  }
+}
 .team__btn {
   -ms-flex-item-align: end;
       align-self: end;
