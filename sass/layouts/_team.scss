@@ -1,3 +1,6 @@
+@use '../utils/_media.scss' as media;
+@use '../utils/_mixins.scss' as mixin;
+
 .team {
   display: flex;
   flex-direction: column;
@@ -6,5 +9,9 @@
   &__btn {
     align-self: end;
     min-width: 269px;
+
+    @include media.mobile-below {
+      align-self: stretch;
+    }
   }
 }

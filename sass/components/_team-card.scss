@@ -8,6 +8,9 @@
   border-radius: var(--border-radius-large);
   box-shadow: var(--shadow);
 
+  @include media.mobile-below {
+    padding-inline: 50px;
+  }
   &__header {
     position: relative;
     display: flex;
@@ -39,11 +42,22 @@
     color: var(--color-accent);
     background-color: var(--color-dark);
     border-radius: 50%;
+    transition-duration: var(--transition-duration);
+
+    @include media.hover {
+      scale: 1.2;
+    }
   }
 
   &__body {
-    margin-top: 28px;
-    padding-top: 28px;
+    --teamCardBodyMarginTop: 28px;
+
+    margin-top: var(--teamCardBodyMarginTop);
+    padding-top: var(--teamCardBodyMarginTop);
     border-top: var(--border);
+
+    @include media.mobile-below {
+      --teamCardBodyMarginTop: 20px;
+    }
   }
 }

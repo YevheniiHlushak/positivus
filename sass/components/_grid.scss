@@ -21,4 +21,14 @@
       --gridColumns: 1;
     }
   }
+
+  &--3 {
+    @include media.desktop-below {
+      --gridColumns: 2;
+    }
+
+    @include media.mobile-below {
+      --gridColumns: 1;
+    }
+  }
 }
