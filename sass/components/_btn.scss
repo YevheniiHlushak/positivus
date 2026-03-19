@@ -2,10 +2,10 @@
 @use '../utils/mixins' as mixin;
 
 .btn {
-  // @include mixin.fluid-text(16,20);
   height: var(--btn-height);
   padding: var(--btn-padding);
   border-radius: var(--border-radius-medium);
+  font-size: 20px;
   line-height: calc(28 / 20);
 }
 
@@ -24,8 +24,9 @@
   color: var(--color-dark);
 
   @include media.hover {
-    background-color: var(--color-gray);
-    color: var(--color-dark-alt);
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    border-color: var(--color-light);
   }
 }
 

@@ -1,0 +1,27 @@
+@use '../utils/_mixins.scss' as mixin;
+@use '../utils/_media.scss' as media;
+
+.socials {
+  &__list {
+    display: flex;
+    column-gap: 20px;
+  }
+
+  &__link {
+    @include mixin.flex-center(true);
+    @include mixin.square(30px);
+
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    border-radius: 50%;
+
+    @include media.hover {
+      background-color: var(--color-accent);
+    }
+
+    svg {
+      width: 50%;
+      height: 50%;
+    }
+  }
+}

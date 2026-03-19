@@ -1,0 +1,20 @@
+@use '../utils/_mixins.scss' as mixin;
+@use '../utils/_media.scss' as media;
+
+.subscribe-form {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 20px;
+  padding: 58px 40px;
+
+  background-color: var(--color-dark-alt);
+  border-radius: var(--border-radius-medium);
+
+  @include media.desktop-below {
+    flex-direction: column;
+    row-gap: 22px;
+    padding: 30px;
+    width: 100%;
+    max-width: 450px;
+  }
+}
