@@ -1,0 +1,51 @@
+@use '../utils/_mixins.scss' as mixin;
+@use '../utils/_media.scss' as media;
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  &__label {
+    @include mixin.fluid-text(16, 14);
+    margin-bottom: 5px;
+
+    @include media.mobile-below {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 18px 30px;
+
+    border: var(--border);
+    border-radius: var(--border-radius-medium);
+
+    @include media.hover {
+      background-color: var(--color-accent);
+    }
+
+    @include media.mobile-below {
+      padding-inline: 20px;
+    }
+
+    &:focus {
+      border-color: var(--color-accent);
+      outline: none;
+    }
+
+    &::placeholder {
+      color: var(--color-gray-alt);
+    }
+
+    &--textarea {
+      height: 190px;
+      resize: none;
+
+      @include media.mobile-below {
+        height: 132px;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@use '../utils/_mixins.scss' as mixin;
+@use '../utils/_media.scss' as media;
+
+.radios {
+  display: flex;
+  column-gap: 35px;
+
+  @include media.mobile-below {
+    justify-content: center;
+    column-gap: 60px;
+  }
+}
