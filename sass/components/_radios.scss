@@ -4,4 +4,9 @@
 .radios {
   display: flex;
   column-gap: 35px;
+
+  @include media.mobile-below {
+    justify-content: center;
+    column-gap: 60px;
+  }
 }

@@ -829,6 +829,11 @@ h4,
   font-size: clamp(16px, 0.9722222222vw, 14px);
   margin-bottom: 5px;
 }
+@media screen and (max-width: 767px) {
+  .field__label {
+    margin-bottom: 10px;
+  }
+}
 .field__input {
   width: 100%;
   padding: 18px 30px;
@@ -843,6 +848,11 @@ h4,
 @media (hover: none) {
   .field__input:active {
     background-color: var(--color-accent);
+  }
+}
+@media screen and (max-width: 767px) {
+  .field__input {
+    padding-inline: 20px;
   }
 }
 .field__input:focus {
@@ -868,6 +878,11 @@ h4,
   height: 190px;
   resize: none;
 }
+@media screen and (max-width: 767px) {
+  .field__input--textarea {
+    height: 132px;
+  }
+}
 
 .radios {
   display: -webkit-box;
@@ -876,6 +891,16 @@ h4,
   -webkit-column-gap: 35px;
      -moz-column-gap: 35px;
           column-gap: 35px;
+}
+@media screen and (max-width: 767px) {
+  .radios {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-column-gap: 60px;
+       -moz-column-gap: 60px;
+            column-gap: 60px;
+  }
 }
 
 .radio {
@@ -1773,10 +1798,14 @@ h4,
 
 .contact-us {
   position: relative;
-  padding: 60px 100px 80px;
-  background-color: var(--color-gray);
-  border-radius: var(--border-radius-large);
   overflow-x: hidden;
+}
+@media screen and (min-width: 768px) {
+  .contact-us {
+    background-color: var(--color-gray);
+    padding: 60px 100px 80px;
+    border-radius: var(--border-radius-large);
+  }
 }
 .contact-us::after {
   --contactUsImageOffsetY: 62px;
@@ -1789,6 +1818,11 @@ h4,
   aspect-ratio: 1;
   background: url("../images/contact-us-illustration.svg") center/contain no-repeat;
 }
+@media screen and (max-width: 1023px) {
+  .contact-us::after {
+    display: none;
+  }
+}
 .contact-us__form, .contact-us__body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1798,10 +1832,35 @@ h4,
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.contact-us__form {
-  row-gap: 40px;
-  max-width: 556px;
+@media screen and (min-width: 768px) {
+  .contact-us {
+    row-gap: 40px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .contact-us__form {
+    max-width: 556px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .contact-us__request-types, .contact-us__body {
+    background-color: var(--color-gray);
+  }
+}
+@media screen and (max-width: 767px) {
+  .contact-us__request-types {
+    padding: 40px 50px 36px;
+    border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+  }
 }
 .contact-us__body {
   row-gap: 25px;
+}
+@media screen and (max-width: 767px) {
+  .contact-us__body {
+    margin-bottom: 30px;
+    row-gap: 20px;
+    padding: 10px 30px 50px;
+    border-radius: 0 0 var(--border-radius-large) var(--border-radius-large);
+  }
 }/*# sourceMappingURL=styles.css.map */

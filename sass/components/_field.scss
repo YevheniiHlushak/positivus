@@ -9,6 +9,10 @@
   &__label {
     @include mixin.fluid-text(16, 14);
     margin-bottom: 5px;
+
+    @include media.mobile-below {
+      margin-bottom: 10px;
+    }
   }
 
   &__input {
@@ -20,6 +24,10 @@
 
     @include media.hover {
       background-color: var(--color-accent);
+    }
+
+    @include media.mobile-below {
+      padding-inline: 20px;
     }
 
     &:focus {
@@ -34,6 +42,10 @@
     &--textarea {
       height: 190px;
       resize: none;
+
+      @include media.mobile-below {
+        height: 132px;
+      }
     }
   }
 }
