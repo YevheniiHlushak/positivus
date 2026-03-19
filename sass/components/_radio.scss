@@ -1,0 +1,38 @@
+@use '../utils/_mixins.scss' as mixin;
+@use '../utils/_media.scss' as media;
+
+.radio {
+  display: flex;
+  align-items: center;
+  column-gap: 14px;
+  transition-duration: var(--transition-duration);
+
+  @include media.hover {
+    opacity: 0.6;
+  }
+
+  &__input {
+    &:not(:checked) + .radio__emulator::after {
+      opacity: 0;
+    }
+  }
+
+  &__emulator {
+    @include mixin.flex-center;
+    @include mixin.square(28px);
+
+    position: relative;
+    border: var(--border);
+    border-radius: 50%;
+
+    &::after {
+      @include mixin.abs-center;
+      @include mixin.square(60%);
+      content: '';
+
+      background-color: var(--color-accent);
+      border-radius: inherit;
+      transition-duration: var(--transition-duration);
+    }
+  }
+}
