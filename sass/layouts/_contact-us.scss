@@ -35,11 +35,11 @@
     flex-direction: column;
   }
 
-  @include media.mobile-above {
-    row-gap: 40px;
-  }
-
   &__form {
+    @include media.mobile-above {
+      row-gap: 40px;
+    }
+
     @include media.tablet-above {
       max-width: 556px;
     }

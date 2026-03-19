@@ -31,11 +31,12 @@
     }
   }
 
-  &__title {
-  }
-
   &__description {
     max-width: 580px;
+  }
+
+  &--last {
+    padding-bottom: 60px;
   }
 }
 
